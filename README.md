@@ -41,3 +41,5 @@ module Program =
       ("restore", Restore.exec);
     ] argv
 ```
+
+**A working example can be found in the FSharp.ConsoleApp.Example projects.**
