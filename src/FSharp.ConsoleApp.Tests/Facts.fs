@@ -34,6 +34,19 @@ module ``Args facts`` =
             Assert.Equal<String> ("key", key)
             Assert.Equal<String> ("value", value)
 
+        let [<Fact>] ``Setting values which contain dashes are correctly parsed`` () = 
+
+            let values = [| "-key"; "a-hyphenated-value" |]
+            let args = Args.parse values
+
+            let key, value = 
+                match args with
+                | [ (Setting (key, value)) ] -> key, value
+                | _ -> String.Empty, String.Empty
+
+            Assert.Equal<String> ("key", key)
+            Assert.Equal<String> ("a-hyphenated-value", value)
+
         let [<Fact>] ``Arguments prefixed with a dash but not followed by an argument with no prefix are ignored`` () = 
 
             let values = [| "-key" |] 

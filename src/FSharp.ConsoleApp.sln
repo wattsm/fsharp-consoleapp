@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.ConsoleApp", "FSharp.ConsoleApp\FSharp.ConsoleApp.fsproj", "{9247C78E-E2F8-4FAF-A0B3-F276E32D02C7}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.ConsoleApp.Tests", "FSharp.ConsoleApp.Tests\FSharp.ConsoleApp.Tests.fsproj", "{39665459-855C-468B-98F7-9B44563EA34E}"

@@ -45,8 +45,8 @@ module Args =
         let tokenise = 
             let tokeniseOne (str : String) = 
                 match str with
-                | RegEx "--(.+)" groups -> Key (groups.[1], true)
-                | RegEx "-(.+)" groups -> Key (groups.[1], false)
+                | RegEx "^--(.+)" groups -> Key (groups.[1], true)
+                | RegEx "^-(.+)" groups -> Key (groups.[1], false)
                 | _ -> Value str
             in Array.Parallel.map tokeniseOne >> Array.toList
 
@@ -75,7 +75,7 @@ module Args =
             | _ :: tokens' -> readRemainder (args, tokens')
             | [] -> args
 
-        tokenise >>  readCommand >> readRemainder >> List.rev
+        tokenise >> readCommand >> readRemainder >> List.rev
 
 ///Functions for invoking handlers
 [<RequireQualifiedAccess>]
